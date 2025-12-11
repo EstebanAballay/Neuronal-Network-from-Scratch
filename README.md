@@ -1,5 +1,3 @@
-Aquí tienes una propuesta completa de README.md lista para copiar y pegar en tu repositorio. He estructurado la documentación para resaltar que es una implementación "desde cero" (from scratch), lo cual es muy valorado técnicamente, y he explicado la lógica matemática detrás de tu código.
-
 Red Neuronal Desde Cero (Pass/Fail Predictor) 🧠
 Este proyecto implementa una Red Neuronal Artificial (ANN) construida puramente en Python y NumPy, sin utilizar frameworks de aprendizaje profundo como TensorFlow, Keras o PyTorch.
 
