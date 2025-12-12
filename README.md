@@ -78,12 +78,12 @@ python Testing.py
 
 + Loss Function: Binary Cross Entropy is used to measure the error:
   
-  $$
+  ```math
   Loss = -\frac{1}{N} \sum (y \cdot \log(\hat{y}) + (1-y) \cdot \log(1-\hat{y}))
-  $$
+  ```
 
 + Backpropagation: Partial derivatives of the error with respect to each weight are calculated using the Chain Rule to update weights in the opposite direction of the gradient:
   
-  $$
+  ```math
   W_{new} = W_{current} - (learning\_rate \cdot \frac{\partial Error}{\partial W})
-  $$
+  ```
