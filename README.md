@@ -66,8 +66,20 @@ python Testing.py
 - Testing.py: Uses the optimal weights obtained from training to make inferences on new data entered via console.
 
 ## 🧮 Mathematical Foundations
-+ Forward Propagation: The dot product of inputs and weights is calculated and passed through the activation function: $$ z = (Inputs \cdot Weights) + 1 $$ $$ \sigma(z) = \frac{1}{1 + e^{-z}} $$
++ Forward Propagation: The dot product of inputs and weights is calculated and passed through the activation function:
+  $$
+  z = (Inputs \cdot Weights) + 1
+  $$
+  $$
+  \sigma(z) = \frac{1}{1 + e^{-z}}
+  $$
 
-+ Loss Function: Binary Cross Entropy is used to measure the error: $$ Loss = -\frac{1}{N} \sum (y \cdot \log(\hat{y}) + (1-y) \cdot \log(1-\hat{y})) $$
++ Loss Function: Binary Cross Entropy is used to measure the error:
+  $$
+  Loss = -\frac{1}{N} \sum (y \cdot \log(\hat{y}) + (1-y) \cdot \log(1-\hat{y}))
+  $$
 
-+ Backpropagation: Partial derivatives of the error with respect to each weight are calculated using the Chain Rule to update weights in the opposite direction of the gradient: $$ W_{new} = W_{current} - (learning_rate \cdot \frac{\partial Error}{\partial W}) $$
++ Backpropagation: Partial derivatives of the error with respect to each weight are calculated using the Chain Rule to update weights in the opposite direction of the gradient:
+  $$
+  W_{new} = W_{current} - (learning\_rate \cdot \frac{\partial Error}{\partial W})
+  $$
