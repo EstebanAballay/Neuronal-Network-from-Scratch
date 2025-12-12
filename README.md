@@ -1,6 +1,6 @@
 # Neural Network From Scratch (Pass/Fail Predictor) 🧠
 
-This project implements an **Artificial Neural Network (ANN)** built purely in **Python** and **NumPy**, without using deep learning frameworks like TensorFlow, Keras, or PyTorch.
+This project implements an **Artificial Neural Network (ANN)** built purely in **Python** and **NumPy**, without using deep learning frameworks like TensorFlow, Keras, or PyTorch. It is a personal experiment to put my theorical knowledge in practice. It can be improved in several ways, for example using more eficcient languages like C++ or Rust, but using python just keeps it simple and easy to understand, as speed it´s not relevant.
 
 The goal of the model is to predict whether a student will **pass or fail** a subject based on two variables:
 1. Number of lectures attended.
