@@ -1,72 +1,73 @@
-# Red Neuronal Desde Cero (Pass/Fail Predictor) 🧠
+# Neural Network From Scratch (Pass/Fail Predictor) 🧠
 
-Este proyecto implementa una **Red Neuronal Artificial (ANN)** construida puramente en **Python** y **NumPy**, sin utilizar frameworks de aprendizaje profundo como TensorFlow, Keras o PyTorch.
+This project implements an **Artificial Neural Network (ANN)** built purely in **Python** and **NumPy**, without using deep learning frameworks like TensorFlow, Keras, or PyTorch.
 
-El objetivo del modelo es predecir si un estudiante **aprobará o reprobará** una materia basándose en dos variables:
-1. Cantidad de clases asistidas.
-2. Horas de estudio dedicadas.
+The goal of the model is to predict whether a student will **pass or fail** a subject based on two variables:
+1. Number of lectures attended.
+2. Dedicated study hours.
 
-## 📋 Tabla de Contenidos
-- [Características](#-características)
-- [Arquitectura de la Red](#-arquitectura-de-la-red)
-- [Pre-requisitos](#-pre-requisitos)
-- [Instalación y Uso](#-instalación-y-uso)
-- [Estructura del Proyecto](#-estructura-del-proyecto)
-- [Fundamentos Matemáticos](#-fundamentos-matemáticos)
+## 📋 Table of Contents
+- [Features](#-features)
+- [Network Architecture](#-network-architecture)
+- [Prerequisites](#-prerequisites)
+- [Installation and Usage](#-installation-and-usage)
+- [Project Structure](#-project-structure)
+- [Mathematical Foundations](#-mathematical-foundations)
 
-## ✨ Características
-- **Zero Frameworks:** Toda la lógica de *Forward Propagation*, *Backpropagation* y *Gradient Descent* está implementada manualmente.
-- **Visualización de Datos:** Gráficos con `matplotlib` para entender la distribución del dataset.
-- **Predicción Interactiva:** Script para probar el modelo con datos ingresados por el usuario.
-- **Optimización:** Uso de función de activación Sigmoide y pérdida Binary Cross Entropy.
+## ✨ Features
+- **Zero Frameworks:** All *Forward Propagation*, *Backpropagation*, and *Gradient Descent* logic is implemented manually.
+- **Data Visualization:** Plots using `matplotlib` to understand the dataset distribution.
+- **Interactive Prediction:** Script to test the model with user-inputted data.
+- **Optimization:** Uses Sigmoid activation function and Binary Cross Entropy loss.
 
-## 🏗 Arquitectura de la Red
-El modelo es un Perceptrón Multicapa (MLP) con la siguiente topología:
+## 🏗 Network Architecture
+The model is a Multilayer Perceptron (MLP) with the following topology:
 
-* **Capa de Entrada:** 2 neuronas (Clases, Horas de estudio).
-* **Capa Oculta:** 3 neuronas (con pesos inicializados aleatoriamente).
-* **Capa de Salida:** 1 neurona (Probabilidad de aprobar).
-* **Función de Activación:** Sigmoide (`1 / (1 + e^-z)`).
-* **Bias:** Integrado en el cálculo matricial (`+ 1` en la suma ponderada).
+* **Input Layer:** 2 neurons (Lectures, Study Hours).
+* **Hidden Layer:** 3 neurons (with randomly initialized weights).
+* **Output Layer:** 1 neuron (Probability of passing).
+* **Activation Function:** Sigmoid (`1 / (1 + e^-z)`).
+* **Bias:** Integrated into the matrix calculation (`+ 1` in the weighted sum).
 
-## 🛠 Pre-requisitos
-El proyecto requiere Python 3.x y las siguientes librerías para manejo de matrices y gráficos:
+## 🛠 Prerequisites
+The project requires Python 3.x and the following libraries for matrix manipulation and plotting:
 ```bash
 pip install numpy matplotlib
 ```
-## 🚀 Instalación
 
-1. Clonar el repositorio:
+## 🚀 Installation 
+
+1. Clone the repository:
 ```bash
 git clone [https://github.com/tu-usuario/repo.git](https://github.com/tu-usuario/repo.git)
 ```
 
-2. Visualizar el Dataset:
+2. Visualize the dataset:
 ```bash
 python Dataset.py
 ```
-O simplemente darle a "ejecutar" en su editor de código
+Or simply hit "run" in your code editor.
 
-3.Entrenar el Modelo: Para ejecutar el algoritmo de entrenamiento y ver cómo disminuye la pérdida (Loss) iteración tras iteración:
+3. Train the Model: To execute the training algorithm and see how the Loss decreases iteration after iteration:
 ```bash
 python Training.py
 ```
 
-4.Probar el Modelo (Predicción): Para interactuar con la red neuronal utilizando los pesos entrenados:
+4. Test the Model (Prediction): To interact with the neural network using the trained weights:
 ```bash
 python Testing.py
 ```
 
-## 📂 Estructura del Proyecto
-- Dataset.py: Contiene el diccionario de datos de entrenamiento y la lógica para graficar los puntos en un plano 2D.
+## 📂 Project Structure
+- Dataset.py: Contains the training data dictionary and the logic to plot the points on a 2D plane.
 
-- Training.py: El núcleo del proyecto. Contiene la clase neuron, la función de pérdida y el bucle principal que ejecuta el Descenso del Gradiente para ajustar los pesos.
+- Training.py: The core of the project. Contains the neuron class, the loss function, and the main loop that executes Gradient Descent to adjust the weights.
 
-- Testing.py: Utiliza los pesos óptimos obtenidos del entrenamiento para realizar inferencias sobre nuevos datos introducidos por consola.
+- Testing.py: Uses the optimal weights obtained from training to make inferences on new data entered via console.
 
-## 🧮 Fundamentos Matemáticos
-+ Forward Propagation: Se calcula el producto punto de las entradas por los pesos y se pasa por la función de activación: $$ z = (Inputs \cdot Weights) + 1 $$ $$ \sigma(z) = \frac{1}{1 + e^{-z}} $$
+## 🧮 Mathematical Foundations
++ Forward Propagation: The dot product of inputs and weights is calculated and passed through the activation function: $$ z = (Inputs \cdot Weights) + 1 $$ $$ \sigma(z) = \frac{1}{1 + e^{-z}} $$
 
-+ Función de Costo (Loss): Se utiliza la Entropía Cruzada Binaria (Binary Cross Entropy) para medir el error: $$ Loss = -\frac{1}{N} \sum (y \cdot \log(\hat{y}) + (1-y) \cdot \log(1-\hat{y})) $$
++ Loss Function: Binary Cross Entropy is used to measure the error: $$ Loss = -\frac{1}{N} \sum (y \cdot \log(\hat{y}) + (1-y) \cdot \log(1-\hat{y})) $$
 
-+ Backpropagation: Se calculan las derivadas parciales del error respecto a cada peso utilizando la Regla de la Cadena para actualizar los pesos en la dirección opuesta al gradiente: $$ W_{nuevo} = W_{actual} - (learning_rate \cdot \frac{\partial Error}{\partial W}) $$
++ Backpropagation: Partial derivatives of the error with respect to each weight are calculated using the Chain Rule to update weights in the opposite direction of the gradient: $$ W_{new} = W_{current} - (learning_rate \cdot \frac{\partial Error}{\partial W}) $$
