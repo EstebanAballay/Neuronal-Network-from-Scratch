@@ -10,7 +10,7 @@ The goal of the model is to predict whether a student will **pass or fail** a su
 - [Features](#-features)
 - [Network Architecture](#-network-architecture)
 - [Prerequisites](#-prerequisites)
-- [Installation and Usage](#-installation-and-usage)
+- [Installation](#-installation)
 - [Project Structure](#-project-structure)
 - [Mathematical Foundations](#-mathematical-foundations)
 
